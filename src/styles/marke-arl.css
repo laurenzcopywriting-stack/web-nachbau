@@ -1,0 +1,635 @@
+/* =========================================================================
+   Marke: Laurenz Copywriting / ARL Consulting
+
+   Farben, Fonts und Typescale stammen aus dem CI-Profil `laurenz-ci-profile`
+   (Single Source of Truth fuer diese Marke), nicht aus einer eigenen Wahl:
+     Primary  #1C2B4A  Nacht-Navy
+     Accent   #C8952A  Bernstein-Gold
+     Headline Playfair Display 700
+     Body     Space Grotesk 400
+   ========================================================================= */
+
+:root {
+  --primaer: #1c2b4a;
+  --primaer-tief: #14203a;
+  --akzent: #c8952a;
+  --akzent-weich: #f6edda;
+  --auf-akzent: #1c2b4a;
+
+  --papier: #ffffff;
+  --papier-alt: #f7f5f1;
+  --dunkel: #14203a;
+
+  --tinte: #16203a;
+  --tinte-weich: #4c566e;
+  --tinte-zart: #838da3;
+
+  --linie: rgba(28, 43, 74, 0.14);
+
+  --font-titel: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-text: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+
+  --kopf-hintergrund: rgba(255, 255, 255, 0.92);
+}
+
+/* Playfair traegt bei grossen Graden mehr Spannung mit etwas engerem Satz. */
+h1,
+h2,
+h3 {
+  letter-spacing: -0.015em;
+}
+
+.kopf__marke {
+  font-family: var(--font-titel);
+}
+
+/* =========================================================================
+   Hero
+   ========================================================================= */
+
+.seite > section:first-child {
+  padding-top: clamp(96px, 11vw, 132px);
+}
+
+.hero {
+  position: relative;
+  padding-bottom: clamp(48px, 7vw, 88px);
+}
+
+.hero__innen {
+  display: grid;
+  grid-template-columns: 1.08fr 0.92fr;
+  align-items: center;
+  gap: clamp(32px, 5vw, 72px);
+}
+
+.hero__kicker {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 6px 14px;
+  border-radius: var(--radius-voll);
+  background: var(--akzent-weich);
+  color: #7d5c14;
+  font-weight: 600;
+}
+
+.hero__titel {
+  max-width: 18ch;
+}
+
+.hero__text {
+  margin-top: 20px;
+  max-width: 52ch;
+  white-space: pre-line;
+}
+
+.hero__aktion {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.hero__beleg {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.hero__beleg img {
+  height: 62px;
+  width: auto;
+  border-radius: var(--radius-s);
+}
+
+.hero__zaehler {
+  font-size: var(--t-klein);
+  font-weight: 600;
+  color: var(--tinte-weich);
+}
+
+/* =========================================================================
+   Gruende ("Zeigen sich KMU kalt...")
+   ========================================================================= */
+
+.gruende__titel {
+  max-width: 24ch;
+  margin-inline: auto;
+  margin-bottom: clamp(30px, 4vw, 52px);
+}
+
+.gruende__raster {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.grund {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 30px 28px;
+  border-radius: var(--radius-l);
+  background: var(--papier-alt);
+  border: 1px solid var(--linie);
+}
+
+.grund__num {
+  font-size: var(--t-mini);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--akzent);
+}
+
+.grund p {
+  font-size: var(--t-klein);
+  color: var(--tinte-weich);
+  white-space: pre-line;
+}
+
+/* =========================================================================
+   Nutzen (zwei Bloecke mit Haken)
+   ========================================================================= */
+
+.nutzen__raster {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(24px, 4vw, 48px);
+}
+
+.nutzen {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: clamp(28px, 4vw, 44px);
+  border-radius: var(--radius-xl);
+  background: var(--primaer);
+  color: #fff;
+}
+
+.nutzen h3 {
+  white-space: pre-line;
+}
+
+.nutzen p {
+  color: var(--auf-dunkel-weich);
+  font-size: var(--t-klein);
+  white-space: pre-line;
+}
+
+.nutzen__punkte {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nutzen__punkte li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: var(--t-klein);
+  font-weight: 500;
+}
+
+.haken {
+  flex: none;
+  margin-top: 3px;
+  color: var(--akzent);
+}
+
+/* =========================================================================
+   Stimme
+   ========================================================================= */
+
+.stimme {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: clamp(20px, 3vw, 40px);
+  padding: clamp(28px, 4vw, 48px);
+  border-radius: var(--radius-xl);
+  background: var(--akzent-weich);
+}
+
+.stimme__bild {
+  width: clamp(88px, 12vw, 128px);
+  border-radius: 50%;
+  flex: none;
+}
+
+.stimme__text {
+  font-family: var(--font-titel);
+  font-size: var(--t-h3);
+  line-height: 1.42;
+  white-space: pre-line;
+}
+
+.stimme__name {
+  display: block;
+  margin-top: 14px;
+  font-family: var(--font-text);
+  font-size: var(--t-klein);
+  font-weight: 600;
+  font-style: normal;
+  color: var(--tinte-weich);
+}
+
+/* =========================================================================
+   Banner mit Handlungsaufruf
+   ========================================================================= */
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  padding: clamp(34px, 5vw, 62px) clamp(24px, 4vw, 48px);
+  border-radius: var(--radius-xl);
+  text-align: center;
+}
+
+.banner__titel {
+  max-width: 22ch;
+}
+
+/* =========================================================================
+   Zeitleiste (3-Step)
+   ========================================================================= */
+
+.leiste__kicker {
+  margin-bottom: 12px;
+}
+
+.leiste__titel {
+  max-width: 24ch;
+  margin-bottom: 16px;
+}
+
+.leiste__vorspann {
+  max-width: var(--breite-lesen);
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+
+.leiste__spur {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(32px, 5vw, 60px);
+  padding-left: 62px;
+}
+
+/* Der senkrechte Faden laeuft hinter den Nummernkreisen durch. */
+.leiste__faden {
+  position: absolute;
+  left: 21px;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  background: var(--linie);
+  border-radius: 2px;
+}
+
+.leiste__fuellung {
+  position: absolute;
+  inset: 0;
+  background: var(--akzent);
+  border-radius: 2px;
+  transform: scaleY(0);
+  transform-origin: 50% 0%;
+}
+
+.schritt {
+  position: relative;
+}
+
+.schritt__num {
+  position: absolute;
+  left: -62px;
+  top: 0;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primaer);
+  color: #fff;
+  font-family: var(--font-titel);
+  font-size: var(--t-klein);
+  font-weight: 700;
+}
+
+.schritt h3 {
+  margin-bottom: 12px;
+}
+
+.schritt p {
+  color: var(--tinte-weich);
+  max-width: var(--breite-lesen);
+  white-space: pre-line;
+}
+
+.schritt p + p {
+  margin-top: 12px;
+}
+
+.schritt em {
+  color: var(--tinte);
+  font-style: italic;
+}
+
+/* =========================================================================
+   Person
+   ========================================================================= */
+
+.person__innen {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  align-items: center;
+  gap: clamp(32px, 5vw, 72px);
+}
+
+.person__rollen {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 32px);
+}
+
+.rolle__name {
+  font-family: var(--font-titel);
+  font-size: var(--t-h3);
+  margin-bottom: 8px;
+  color: var(--akzent);
+}
+
+.rolle p {
+  color: var(--tinte-weich);
+  font-size: var(--t-klein);
+  white-space: pre-line;
+}
+
+.person__bild {
+  border-radius: var(--radius-xl);
+}
+
+.person__name {
+  margin-top: 18px;
+  text-align: center;
+  font-family: var(--font-titel);
+  font-size: var(--t-h4);
+}
+
+.person__nachname {
+  display: block;
+  font-family: var(--font-text);
+  font-size: var(--t-mini);
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--tinte-zart);
+}
+
+/* =========================================================================
+   Netzwerk-Kennzahlen
+   ========================================================================= */
+
+.netzwerk__vorspann {
+  max-width: var(--breite-lesen);
+  margin-inline: auto;
+  margin-bottom: clamp(30px, 4vw, 48px);
+  white-space: pre-line;
+}
+
+/* =========================================================================
+   Leistungen
+   ========================================================================= */
+
+.leistungen__titel {
+  max-width: 24ch;
+  margin-bottom: 14px;
+}
+
+.leistungen__vorspann {
+  margin-bottom: clamp(30px, 4vw, 50px);
+}
+
+.leistungen__raster {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+.leistung {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--radius-l);
+  overflow: hidden;
+  background: var(--papier-alt);
+  border: 1px solid var(--linie);
+}
+
+.leistung .bild {
+  border-radius: 0;
+}
+
+.leistung__text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px 22px 28px;
+}
+
+.leistung__text p {
+  font-size: var(--t-klein);
+  color: var(--tinte-weich);
+  white-space: pre-line;
+}
+
+/* =========================================================================
+   Ablauf
+   ========================================================================= */
+
+.ablauf__titel {
+  max-width: 20ch;
+  margin-bottom: 14px;
+}
+
+.ablauf__vorspann {
+  max-width: var(--breite-lesen);
+  margin-bottom: clamp(28px, 4vw, 46px);
+}
+
+.ablauf__liste {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  counter-reset: ablauf;
+}
+
+.ablauf__punkt {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 22px 24px;
+  border-radius: var(--radius-m);
+  background: var(--papier-alt);
+  font-size: var(--t-klein);
+  color: var(--tinte-weich);
+}
+
+.ablauf__punkt::before {
+  counter-increment: ablauf;
+  content: counter(ablauf);
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--akzent);
+  color: var(--auf-akzent);
+  font-family: var(--font-titel);
+  font-weight: 700;
+  font-size: var(--t-klein);
+}
+
+/* =========================================================================
+   Kontakt
+   ========================================================================= */
+
+.kontakt__innen {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 68px);
+  align-items: start;
+}
+
+.kontakt__titel {
+  max-width: 20ch;
+  margin-bottom: 16px;
+}
+
+.kontakt__punkte {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--auf-dunkel-weich);
+  font-size: var(--t-klein);
+  white-space: pre-line;
+}
+
+.kontakt__wege {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.kontakt__weg {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.kontakt__weg span {
+  font-size: var(--t-mini);
+  color: var(--auf-dunkel-weich);
+}
+
+.kontakt__weg a,
+.kontakt__weg strong {
+  font-family: var(--font-titel);
+  font-size: var(--t-h4);
+  font-weight: 700;
+}
+
+/* Das Formular der Live-Seite sendet an einen Dienst, den dieser Nachbau
+   nicht hat. Es steht hier als Nachbildung ohne Empfaenger — siehe
+   ABWEICHUNGEN.md. */
+.formular {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  padding: clamp(24px, 3vw, 34px);
+  border-radius: var(--radius-l);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.formular__feld {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formular__feld--breit {
+  grid-column: 1 / -1;
+}
+
+.formular label {
+  font-size: var(--t-mini);
+  color: var(--auf-dunkel-weich);
+}
+
+.formular input,
+.formular select {
+  padding: 12px 14px;
+  border-radius: var(--radius-s);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  font-size: var(--t-klein);
+}
+
+.formular input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.formular__hinweis {
+  grid-column: 1 / -1;
+  font-size: var(--t-mini);
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.formular .knopf {
+  grid-column: 1 / -1;
+}
+
+/* =========================================================================
+   FAQ
+   ========================================================================= */
+
+.faq__titel {
+  max-width: 26ch;
+  margin-bottom: clamp(26px, 4vw, 42px);
+}
+
+/* =========================================================================
+   Schmale Fenster
+   ========================================================================= */
+
+@media (max-width: 900px) {
+  .hero__innen,
+  .person__innen,
+  .kontakt__innen,
+  .stimme {
+    grid-template-columns: 1fr;
+  }
+
+  .stimme {
+    text-align: center;
+    justify-items: center;
+  }
+
+  .stimme__bild {
+    margin-inline: auto;
+  }
+
+  .formular {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,11 @@
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Umgebungsdateien gehoeren nie ins Repo
+.env
+.env.*
+!.env.beispiel
+
+.DS_Store
+Thumbs.db

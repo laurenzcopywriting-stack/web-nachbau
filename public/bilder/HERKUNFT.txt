@@ -1,0 +1,34 @@
+# Herkunft der Bilder
+# Format: unterordner/dateiname|vollstaendige Quell-URL
+# Gezogen von arl-consulting.de und gienow-akademie.onepage.me,
+# anschliessend fuers Web verkleinert (max. 2000 px Kante, max. 4 MP).
+
+arl/logo|https://onecdn.io/media/3ece0add-0116-4f38-b4b7-74cb1be3b909/md2x
+arl/hero-tanzschule|https://onecdn.io/media/6a58afad-f49f-4dd5-aee6-4c22dca3a544/xlg2x
+arl/portrait|https://onecdn.io/media/34ea7914-03b3-4b46-a2c8-d1c0932f075e/xlg2x
+arl/stimme-georg|https://onecdn.io/media/8a4461dc-678a-4001-b0f2-3f8e1a1c6a29/xlg2x
+arl/tuev|https://onecdn.io/media/e5f720cb-aa5f-41c7-a886-1d9085516a7a/xlg2x
+arl/leistung-website|https://onecdn.io/unsplash/kUqqaRjJuw0/xlg2x
+arl/leistung-newsletter|https://onecdn.io/unsplash/3Mhgvrk4tjM/xlg2x
+arl/leistung-social|https://onecdn.io/unsplash/OwvRB-M3GwE/xlg2x
+arl/leistung-google|https://onecdn.io/unsplash/3ILgniCrXO0/xlg2x
+arl/leistung-linkedin|https://onecdn.io/unsplash/QkKLwEB4T1o/xlg2x
+arl/leistung-funnel|https://onecdn.io/unsplash/JB3mBjGt94Y/xlg2x
+arl/provenexpert|https://images.provenexpert.com/97/d5/c3b9d429f39f3d3ca762f1d775a8/widget_landscape_290_de_1.png
+
+akademie/logo|https://onecdn.io/media/18141644-f6e1-4e4f-91e3-ddf1bcebf172/md2x
+akademie/logo-fuss|https://onecdn.io/media/be556583-e291-411e-8896-8e5f44dc5268/md2x
+akademie/skool-hero|https://onecdn.io/media/ea501fed-fcf1-45e7-8f93-7a2fc945a887/xlg2x
+akademie/funke|https://onecdn.io/unsplash/-SOct8ZymGI/xlg2x
+akademie/tool-fingerapotheke|https://onecdn.io/media/880e5f6d-ee10-4515-a754-5d583488603f/xlg2x
+akademie/tool-boostergane|https://onecdn.io/media/8024cfca-0d2f-4dfd-8a25-cdc618c056c3/xlg2x
+akademie/tool-selfq|https://onecdn.io/media/b5e4cb61-a61e-4828-b1f3-6df85da437b4/xlg2x
+akademie/gudrun|https://onecdn.io/media/68d0b186-f97f-4a78-88ea-c474de3ab307/xlg2x
+akademie/info-hero|https://onecdn.io/media/bcac44a7-8d4b-42ca-a974-a5be267943f5/xlg2x
+akademie/avatar-anne|https://onecdn.io/media/5ea46dd2-91d9-4ce1-9302-0cd425e50bce/xlg2x
+akademie/avatar-ingrid|https://onecdn.io/media/75a69fd8-f1b1-4206-8529-40b91c5e3844/xlg2x
+akademie/avatar-julia|https://onecdn.io/media/a45d5f9f-723f-4ec0-8b4c-5acc9780f942/xlg2x
+akademie/avatar-erik|https://onecdn.io/media/a9ab06de-9f28-4894-bcc7-f112bbfd1c14/xlg2x
+akademie/avatar-sarah|https://onecdn.io/media/e540fc01-dbf5-4919-a021-ce98b4688fdf/xlg2x
+akademie/avatar-laurenz|https://onecdn.io/media/3954cbad-8b32-40fe-a249-fa2e33c99952/xlg2x
+akademie/qode-poster|https://onecdn.io/media/1b3cedb6-188a-4a60-be84-753262a78d36/xlg2x

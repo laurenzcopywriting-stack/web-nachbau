@@ -1,0 +1,88 @@
+/* =========================================================================
+   Die Wurzelseite. Gehoert zu keiner der beiden Marken und ist deshalb
+   bewusst neutral gehalten.
+   ========================================================================= */
+
+:root {
+  --primaer: #23303a;
+  --akzent: #2c7a94;
+  --papier-alt: #f4f4f6;
+  --font-titel: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-text: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+}
+
+.uebersicht {
+  min-height: 100svh;
+  padding-block: clamp(56px, 9vw, 110px);
+}
+
+.uebersicht__kopf {
+  max-width: 60ch;
+  margin-bottom: clamp(40px, 6vw, 72px);
+}
+
+.uebersicht__kopf .h1 {
+  margin-block: 12px 18px;
+}
+
+.uebersicht__gruppe + .uebersicht__gruppe {
+  margin-top: clamp(40px, 6vw, 68px);
+}
+
+.uebersicht__gruppe > .h3 {
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--linie);
+}
+
+.uebersicht__liste {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.uebersicht__karte {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 24px;
+  border-radius: var(--radius-m);
+  background: var(--papier-alt);
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.uebersicht__karte:hover {
+  background: #e8eef1;
+  transform: translateY(-2px);
+}
+
+.uebersicht__pfeil {
+  color: var(--akzent);
+}
+
+.uebersicht__original {
+  display: inline-block;
+  margin-top: 8px;
+  margin-left: 24px;
+  font-size: var(--t-mini);
+  color: var(--tinte-zart);
+  text-decoration: underline;
+}
+
+.uebersicht__original:hover {
+  color: var(--akzent);
+}
+
+.uebersicht__fuss {
+  margin-top: clamp(40px, 6vw, 68px);
+  padding-top: 22px;
+  border-top: 1px solid var(--linie);
+  max-width: 70ch;
+}
+
+.uebersicht__fuss code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85em;
+}

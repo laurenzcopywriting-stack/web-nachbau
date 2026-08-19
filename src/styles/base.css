@@ -1,0 +1,277 @@
+/* =========================================================================
+   Fundament: Reset, Raster, Typo-Skala.
+
+   Hier stehen KEINE Markenfarben. Die Tokens werden nur benannt und mit
+   neutralen Rueckfallwerten belegt; die eigentlichen Werte setzen
+   marke-arl.css und marke-akademie.css. So kann keine Marke versehentlich
+   auf die andere abfaerben.
+   ========================================================================= */
+
+:root {
+  /* --- Von der Marke zu setzen -------------------------------------------- */
+  --primaer: #222;
+  --primaer-tief: #000;
+  --akzent: #888;
+  --akzent-weich: #eee;
+
+  --papier: #ffffff;
+  --papier-alt: #f6f6f8;
+  --dunkel: #16161c;
+
+  --tinte: #14141a;
+  --tinte-weich: #4b4b58;
+  --tinte-zart: #7c7c88;
+  --auf-dunkel: #ffffff;
+  --auf-dunkel-weich: rgba(255, 255, 255, 0.76);
+
+  --linie: rgba(20, 20, 26, 0.12);
+  --linie-hell: rgba(255, 255, 255, 0.22);
+
+  --font-titel: ui-sans-serif, system-ui, sans-serif;
+  --font-text: ui-sans-serif, system-ui, sans-serif;
+
+  /* --- Form ---------------------------------------------------------------- */
+  --radius-s: 8px;
+  --radius-m: 14px;
+  --radius-l: 22px;
+  --radius-xl: 32px;
+  --radius-voll: 999px;
+
+  --schatten-karte: 0 1px 2px rgba(16, 16, 26, 0.04), 0 12px 32px rgba(16, 16, 26, 0.07);
+  --schatten-hoch: 0 2px 4px rgba(16, 16, 26, 0.05), 0 28px 60px rgba(16, 16, 26, 0.13);
+
+  /* --- Raster -------------------------------------------------------------- */
+  --breite: 1160px;
+  --breite-schmal: 780px;
+  --breite-lesen: 68ch;
+  --rand: clamp(20px, 5vw, 56px);
+  --sektion: clamp(68px, 10vw, 136px);
+
+  /* --- Typo-Skala ----------------------------------------------------------
+     clamp() statt Breakpoints: die Groessen wandern stufenlos mit, damit auf
+     keinem Zwischenformat eine Ueberschrift unguenstig umbricht. */
+  --t-display: clamp(2.4rem, 6vw, 4.2rem);
+  --t-h1: clamp(2rem, 4.6vw, 3.3rem);
+  --t-h2: clamp(1.62rem, 3.3vw, 2.5rem);
+  --t-h3: clamp(1.2rem, 2vw, 1.55rem);
+  --t-h4: clamp(1.04rem, 1.4vw, 1.2rem);
+  --t-gross: clamp(1.02rem, 1.3vw, 1.16rem);
+  --t-body: 1rem;
+  --t-klein: 0.9rem;
+  --t-mini: 0.785rem;
+}
+
+/* =========================================================================
+   Reset
+   ========================================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+/* scroll-behavior bleibt aus: ScrollSmoother uebernimmt das Scrollen.
+   Beides gleichzeitig kaempft um dieselbe Scrollposition. */
+
+body {
+  font-family: var(--font-text);
+  font-size: var(--t-body);
+  line-height: 1.62;
+  color: var(--tinte);
+  background: var(--papier);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-titel);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  padding: 0;
+  list-style: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--akzent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Auf dunklen Flaechen ist ein farbiger Fokusring oft unsichtbar. */
+.auf-dunkel :focus-visible,
+.auf-primaer :focus-visible {
+  outline-color: #fff;
+}
+
+/* =========================================================================
+   Typo-Klassen
+   ========================================================================= */
+
+.display {
+  font-size: var(--t-display);
+}
+.h1 {
+  font-size: var(--t-h1);
+}
+.h2 {
+  font-size: var(--t-h2);
+}
+.h3 {
+  font-size: var(--t-h3);
+}
+.h4 {
+  font-size: var(--t-h4);
+  letter-spacing: -0.01em;
+}
+
+.lead {
+  font-size: var(--t-gross);
+  line-height: 1.58;
+  color: var(--tinte-weich);
+}
+
+.klein {
+  font-size: var(--t-klein);
+  color: var(--tinte-weich);
+}
+
+/* Das kleine Label ueber einer Ueberschrift. */
+.kicker {
+  display: inline-block;
+  font-size: var(--t-klein);
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--tinte-zart);
+}
+
+.auf-dunkel .kicker,
+.auf-primaer .kicker {
+  color: var(--auf-dunkel-weich);
+}
+
+.betont {
+  color: var(--akzent);
+}
+
+/* =========================================================================
+   Layout-Helfer
+   ========================================================================= */
+
+.huelle {
+  width: 100%;
+  max-width: var(--breite);
+  margin-inline: auto;
+  padding-inline: var(--rand);
+}
+
+.huelle--schmal {
+  max-width: var(--breite-schmal);
+}
+
+.sektion {
+  padding-block: var(--sektion);
+}
+
+.sektion--eng {
+  padding-block: calc(var(--sektion) * 0.6);
+}
+
+.mitte {
+  text-align: center;
+}
+
+.mitte .lead {
+  margin-inline: auto;
+}
+
+/* Mehrzeilige Texte aus den Inhaltsdateien behalten ihre Umbrueche. */
+.zeilen {
+  white-space: pre-line;
+}
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.sprungmarke {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 200;
+  padding: 12px 20px;
+  background: var(--tinte);
+  color: #fff;
+  border-radius: var(--radius-voll);
+  font-size: var(--t-klein);
+  font-weight: 600;
+  transform: translateY(-160%);
+  transition: transform 0.2s ease;
+}
+
+.sprungmarke:focus-visible {
+  transform: translateY(0);
+}
