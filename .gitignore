@@ -1,11 +1,4 @@
-node_modules/
-dist/
-*.tsbuildinfo
-
-# Umgebungsdateien gehoeren nie ins Repo
-.env
-.env.*
-!.env.beispiel
-
+# Nichts ausschliessen: die Kopien sind fertige Dateien und muessen
+# vollstaendig ins Repo.
 .DS_Store
 Thumbs.db
