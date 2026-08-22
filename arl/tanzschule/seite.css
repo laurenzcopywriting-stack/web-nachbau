@@ -2464,7 +2464,7 @@ section.con-kit-animation--start .con-kit-atom__effects { opacity: 0; }
   font-weight: 500;
   
   src: local(''),
-    url(../../dateien/420cf33fb9d783c0.woff2) format('woff2'),
+    url('https://onecdn.io/font-storage/instrument-sans/instrument-sans-500italic.woff2') format('woff2'),
        url(../../dateien/37be4d7ba546e991.woff) format('woff'),
        url(../../dateien/bc3bd65f71cc8550.ttf) format('truetype'),
        url(../../dateien/943716810e3eb6d0.svg) format('svg')
