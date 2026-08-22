@@ -1,0 +1,30 @@
+# Zeilenenden im Repository immer LF -- unabhaengig davon, auf welchem
+# Rechner gearbeitet wird.
+#
+# WARUM DAS NOETIG WURDE: Das Projekt entstand auf einem Windows-Rechner
+# und liegt jetzt auf einem Mac. Windows speicherte CRLF, der Mac LF.
+# Nach dem Umzug meldete git jede Datei als komplett geaendert -- gleich
+# viele eingefuegte wie geloeschte Zeilen, obwohl sich inhaltlich nichts
+# geaendert hatte. Echte Arbeit verschwindet in solchem Rauschen.
+#
+# `text=auto` heisst: git erkennt Textdateien selbst und legt sie mit LF
+# ab. Was im Arbeitsverzeichnis steht, bleibt der Plattform ueberlassen.
+* text=auto eol=lf
+
+# Binaerdateien nie anfassen. Ein Bild oder eine Schriftdatei, in der git
+# vermeintliche Zeilenenden umschreibt, ist danach kaputt.
+*.jpg    binary
+*.jpeg   binary
+*.png    binary
+*.gif    binary
+*.webp   binary
+*.avif   binary
+*.ico    binary
+*.pdf    binary
+*.mp4    binary
+*.ttf    binary
+*.otf    binary
+*.woff   binary
+*.woff2  binary
+*.gz     binary
+*.zip    binary
