@@ -1,4 +1,6 @@
-# Nichts ausschliessen: die Kopien sind fertige Dateien und muessen
-# vollstaendig ins Repo.
+# Arbeitsdatei des Spiegelvorgangs — wird von korrigieren.py gelesen,
+# gehoert aber nicht zur ausgelieferten Seite.
+zustand.json
+
 .DS_Store
 Thumbs.db
