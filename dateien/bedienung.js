@@ -29,7 +29,10 @@
     eintrag.querySelectorAll('*').forEach(function (el) {
       if (treffer) return;
       var stil = getComputedStyle(el);
-      if (el.scrollHeight > 24 && el.getBoundingClientRect().height < 3 && stil.overflow === 'hidden') {
+      // Schwelle bewusst niedrig: eine einzeilige Antwort ist nur 24 px hoch.
+      // Mit '> 24' fielen genau solche Panels durch und liessen sich nicht
+      // oeffnen — auf der Community-Seite betraf das beide FAQ-Eintraege.
+      if (el.scrollHeight > 8 && el.getBoundingClientRect().height < 3 && stil.overflow === 'hidden') {
         treffer = el;
       }
     });
