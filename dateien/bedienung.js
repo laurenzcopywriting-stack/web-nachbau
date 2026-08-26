@@ -215,18 +215,30 @@
       '&body=' + encodeURIComponent(zeilen.join('\n'));
   }
 
-  function perNetlify(werte, fertig) {
+  /* Schickt die Anfrage an die eigene Annahmestelle.
+
+     Frueher ging das an Netlify Forms. Nach dem Umzug auf Cloudflare gibt es
+     diesen Dienst nicht mehr; an seine Stelle tritt /api/kontakt, eine
+     Pages Function, die jede Anfrage zuerst ablegt und danach zu versenden
+     versucht. Siehe werkzeug/formular/kontakt.js.
+
+     Der Weg wird nicht mehr am HTML erkannt, sondern ausprobiert: die
+     Annahmestelle antwortet, oder sie tut es nicht. Das ist verlaesslicher
+     als jede Vorab-Erkennung — auf GitHub Pages und beim Oeffnen als Datei
+     gibt es sie schlicht nicht, dort greift der Rueckfall aufs Mailprogramm. */
+  function perAnnahme(werte, fertig) {
     var daten = new URLSearchParams();
-    daten.append('form-name', 'kontakt');
     daten.append('seite', location.pathname);
     Object.keys(werte).forEach(function (k) { daten.append(k, werte[k]); });
 
-    fetch(location.pathname, {
+    fetch('/api/kontakt', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: daten.toString()
     }).then(function (a) {
-      fertig(a.ok);
+      if (!a.ok) { fertig(false); return; }
+      return a.json().then(function (d) { fertig(!!(d && d.ok)); })
+                     .catch(function () { fertig(false); });
     }).catch(function () {
       fertig(false);
     });
@@ -240,13 +252,10 @@
     });
     if (!knopf) return;
 
-    // Netlify schreibt beim Ausliefern das HTML um: es entfernt `data-netlify`
-    // und setzt dafuer ein verstecktes `form-name`-Feld ein. Genau dieses Feld
-    // ist deshalb das verlaessliche Kennzeichen — auf `data-netlify` zu pruefen
-    // schlaegt live immer fehl, weil das Attribut dort nicht mehr existiert.
-    // Auf den GitHub-Pages-Kopien fehlt die Umschreibung; dort bleibt es beim
-    // Mailprogramm, statt in einen 404 zu laufen.
-    var ueberNetlify = !!document.querySelector('form[name="kontakt"] input[name="form-name"]');
+    // Als Datei geoeffnet gibt es keine Annahmestelle — dort gleich das
+    // Mailprogramm, statt in einen Fehler zu laufen. Ueberall sonst wird es
+    // versucht und bei Misserfolg zurueckgefallen.
+    var kannAnnahme = location.protocol === 'http:' || location.protocol === 'https:';
     var laeuft = false;
 
     knopf.addEventListener('click', function (e) {
@@ -260,7 +269,7 @@
         return;
       }
 
-      if (!ueberNetlify) {
+      if (!kannAnnahme) {
         perMail(werte);
         return;
       }
@@ -269,7 +278,7 @@
       var vorher = knopf.textContent;
       knopf.textContent = 'Wird gesendet …';
 
-      perNetlify(werte, function (geklappt) {
+      perAnnahme(werte, function (geklappt) {
         laeuft = false;
         knopf.textContent = vorher;
 
