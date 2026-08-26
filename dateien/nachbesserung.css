@@ -32,7 +32,28 @@
   flex-shrink: 0 !important;
 }
 
-/* --- 2. Karten im Angebots-Laufband ueberlappten ------------------------
+/* --- 2. Unterstrich-Effekt drueckte Text in die naechste Zeile ----------
+   Ein hervorgehobenes Wort traegt zwei Arten von SVG: die sichtbaren
+   Unterstriche liegen absolut positioniert in `.highlight-effect-*` und
+   nehmen keinen Platz ein — daneben steht im Text selbst eine unsichtbare
+   Vorlage, aus der der Baukasten sie erzeugt.
+
+   Diese Vorlage ist im Original `display: none`. Beim Spiegeln blitzt sie
+   waehrend der Animation kurz auf; weil je Element der sichtbarste gemessene
+   Zustand gewonnen wird, blieb `flex` stehen. Sie wurde damit 71 px breit,
+   stand mitten im Fliesstext und schob die folgenden Woerter in eine neue
+   Zeile — auf der Startseite kostete das 218 px Hoehe, dazu ein sichtbarer
+   Strichrest an falscher Stelle.
+
+   Nachgemessen in allen Vorlagen: ein SVG direkt unter
+   `.con-kit-quark-highlight` ist dort ausnahmslos ausgeblendet, waehrend die
+   in `.highlight-effect-*` ausnahmslos sichtbar sind. Die Unterscheidung ist
+   also strukturell und nicht geraten. */
+.con-kit-quark-highlight > svg {
+  display: none !important;
+}
+
+/* --- 3. Karten im Angebots-Laufband ueberlappten ------------------------
    Jede Wiederholung des Kartensatzes wird absolut an `n × Breite` gesetzt.
    Das Skript gibt ihr die Breite des Satzes (2083 px); ohne Skript faellt sie
    auf die Fensterbreite (1440 px) zurueck — die Wiederholungen ruecken

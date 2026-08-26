@@ -1,0 +1,5 @@
+/* Aus dem beim Spiegeln gemessenen Zustand erzeugt.
+   Nicht von Hand aendern — wird von korrigieren.py neu geschrieben. */
+
+[data-o="238"] { transform: matrix(1, 0, 0, 1, -720, 0) !important }
+[data-o="1242"] { height: 551.7px !important }
