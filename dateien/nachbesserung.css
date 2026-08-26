@@ -1,0 +1,33 @@
+/* =========================================================================
+   Nachbesserung: zwei Stellen, an denen der Baukasten Werte per JavaScript
+   setzt und die Kopie deshalb im CSS-Ausgangszustand haengenbleibt.
+
+   Bewusst als eigene, kurze Datei mit stabilen Klassennamen — nicht als
+   weitere Regel in korrektur.css. Die wird maschinell neu geschrieben und
+   verliert Handarbeit beim naechsten Lauf.
+   ========================================================================= */
+
+/* --- 1. Menuepunkte lagen uebereinander --------------------------------
+   Der Baukasten schaltet die Punkte auf `relative`, sobald sie in eine Zeile
+   passen; ohne Skript bleiben sie `absolute` und stapeln sich alle an
+   derselben Stelle (gemessen: alle auf x = 428 statt 428 / 527 / 610).
+
+   Der `__decorator` daneben ist auch im Original absolut positioniert und
+   bleibt deshalb unangetastet. */
+.con-kit-atom-menu-v2-item {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+}
+
+/* --- 2. Karten im Angebots-Laufband ueberlappten ------------------------
+   Jede Wiederholung des Kartensatzes wird absolut an `n × Breite` gesetzt.
+   Das Skript gibt ihr die Breite des Satzes (2083 px); ohne Skript faellt sie
+   auf die Fensterbreite (1440 px) zurueck — die Wiederholungen ruecken
+   dadurch 643 px zu weit nach links und schieben sich ineinander.
+
+   `max-content` statt eines festen Wertes: so stimmt die Breite auch auf
+   anderen Fensterbreiten und auf Seiten mit anders breiten Laufbaendern. */
+.con-kit-component-marquee__repeat {
+  width: max-content !important;
+}
