@@ -23,13 +23,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Die Seiten sind fertige Kopien — kein Build noetig, das Verzeichnis
-      # geht so wie es ist nach oben.
       - uses: actions/configure-pages@v5
 
+      # Die Kopien liegen seit dem Umzug auf Netlify. Von hier geht deshalb
+      # nur noch `weiterleitung/` nach oben: jede alte Adresse fuehrt zur
+      # neuen, statt eine zweite, nicht mehr gepflegte Fassung auszuliefern.
+      #
+      # Der Quelltext der Kopien bleibt im Repo — er ist die Quelle, aus der
+      # werkzeug/netlify_bauen.py die Netlify-Sites erzeugt.
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: weiterleitung
 
       - uses: actions/deploy-pages@v4
         id: deploy
