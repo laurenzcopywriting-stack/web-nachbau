@@ -177,6 +177,61 @@
 
   /* ----------------------------------------------------------------- Formular */
 
+  var EMPFAENGER = 'laurenz.copywriting@gmail.com';
+
+  /* Ordnet ein sichtbares Feld einem Formularnamen zu.
+     Der Baukasten vergibt weder `name` noch stabile `id` — die IDs sind von
+     React erzeugt (`:R2cddpkqfl4n:`) und aendern sich bei jedem Neubau. Die
+     Platzhalter sind das einzig Verlaessliche. */
+  function feldName(el) {
+    var ph = (el.placeholder || '').toLowerCase();
+    if (ph.indexOf('alex') >= 0) return 'vorname';
+    if (ph.indexOf('weber') >= 0) return 'nachname';
+    if (el.type === 'email') return 'email';
+    if (el.tagName === 'SELECT') return 'vorwahl';
+    if (el.type === 'tel') return 'telefon';
+    return null;
+  }
+
+  function felderLesen() {
+    var werte = {};
+    document.querySelectorAll('input, select, textarea').forEach(function (el) {
+      // Die verdeckte Zwillingsfassung fuer die Netlify-Erkennung auslassen,
+      // sonst wuerden ihre leeren Felder die echten Eingaben ueberschreiben.
+      if (el.closest('form[name="kontakt"]')) return;
+      var name = feldName(el);
+      if (!name) return;
+      var wert = (el.value || '').trim();
+      if (wert) werte[name] = wert;
+    });
+    return werte;
+  }
+
+  function perMail(werte) {
+    var zeilen = Object.keys(werte).map(function (k) { return k + ': ' + werte[k]; });
+    window.location.href =
+      'mailto:' + EMPFAENGER +
+      '?subject=' + encodeURIComponent('Anfrage über arl-consulting.de') +
+      '&body=' + encodeURIComponent(zeilen.join('\n'));
+  }
+
+  function perNetlify(werte, fertig) {
+    var daten = new URLSearchParams();
+    daten.append('form-name', 'kontakt');
+    daten.append('seite', location.pathname);
+    Object.keys(werte).forEach(function (k) { daten.append(k, werte[k]); });
+
+    fetch(location.pathname, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: daten.toString()
+    }).then(function (a) {
+      fertig(a.ok);
+    }).catch(function () {
+      fertig(false);
+    });
+  }
+
   function formularAufbauen() {
     var knopf = null;
     document.querySelectorAll('button, [class*="component-button"]').forEach(function (el) {
@@ -185,31 +240,50 @@
     });
     if (!knopf) return;
 
-    var empfaenger = 'laurenz.copywriting@gmail.com';
+    // Netlify schreibt beim Ausliefern das HTML um: es entfernt `data-netlify`
+    // und setzt dafuer ein verstecktes `form-name`-Feld ein. Genau dieses Feld
+    // ist deshalb das verlaessliche Kennzeichen — auf `data-netlify` zu pruefen
+    // schlaegt live immer fehl, weil das Attribut dort nicht mehr existiert.
+    // Auf den GitHub-Pages-Kopien fehlt die Umschreibung; dort bleibt es beim
+    // Mailprogramm, statt in einen 404 zu laufen.
+    var ueberNetlify = !!document.querySelector('form[name="kontakt"] input[name="form-name"]');
+    var laeuft = false;
 
     knopf.addEventListener('click', function (e) {
       e.preventDefault();
+      if (laeuft) return;
 
-      var felder = [];
-      document.querySelectorAll('input, select, textarea').forEach(function (el) {
-        if (el.type === 'hidden' || el.type === 'submit') return;
-        var wert = (el.value || '').trim();
-        if (!wert) return;
-        var name = el.placeholder || el.getAttribute('aria-label') || el.type;
-        felder.push(name + ': ' + wert);
-      });
+      var werte = felderLesen();
 
-      if (!felder.length) {
-        melden('Bitte fülle zuerst mindestens ein Feld aus.');
+      if (!werte.email && !werte.telefon) {
+        melden('Bitte hinterlasse eine E-Mail-Adresse oder eine Telefonnummer.');
         return;
       }
 
-      var betreff = 'Anfrage über arl-consulting.de';
-      var text = felder.join('\n');
-      window.location.href =
-        'mailto:' + empfaenger +
-        '?subject=' + encodeURIComponent(betreff) +
-        '&body=' + encodeURIComponent(text);
+      if (!ueberNetlify) {
+        perMail(werte);
+        return;
+      }
+
+      laeuft = true;
+      var vorher = knopf.textContent;
+      knopf.textContent = 'Wird gesendet …';
+
+      perNetlify(werte, function (geklappt) {
+        laeuft = false;
+        knopf.textContent = vorher;
+
+        if (geklappt) {
+          melden('Danke — deine Anfrage ist angekommen. Wir melden uns.');
+          document.querySelectorAll('input, textarea').forEach(function (el) {
+            if (!el.closest('form[name="kontakt"]') && feldName(el)) el.value = '';
+          });
+        } else {
+          // Lieber das Mailprogramm als eine verlorene Anfrage.
+          melden('Senden hat nicht geklappt — ich öffne dein E-Mail-Programm.');
+          window.setTimeout(function () { perMail(werte); }, 1200);
+        }
+      });
     });
   }
 

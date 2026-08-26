@@ -7,17 +7,29 @@
    verliert Handarbeit beim naechsten Lauf.
    ========================================================================= */
 
-/* --- 1. Menuepunkte lagen uebereinander --------------------------------
-   Der Baukasten schaltet die Punkte auf `relative`, sobald sie in eine Zeile
-   passen; ohne Skript bleiben sie `absolute` und stapeln sich alle an
-   derselben Stelle (gemessen: alle auf x = 428 statt 428 / 527 / 610).
+/* --- 1. Menuepunkte lagen uebereinander bzw. brachen um -----------------
+   Zwei getrennte Ursachen, beide daher, dass der Baukasten die Menuebreite
+   zur Laufzeit misst und danach Werte setzt:
+
+   a) Die Punkte blieben `absolute` und stapelten sich alle auf derselben
+      Stelle (gemessen: alle auf x = 428 statt 428 / 527 / 610).
+
+   b) Danach waren sie zwar richtig verteilt, aber nur 44 statt 99 px breit,
+      sodass "Startseite" buchstabenweise untereinander umbrach. Grund ist
+      allein das Flex-Schrumpfen: im Original steht der Punkt auf
+      `flex: 0 0 auto`, in der Kopie auf `0 1 auto` und faellt damit unter
+      seine Inhaltsbreite. Keine CSS-Regel setzt hier eine Breite — es reicht
+      deshalb, das Schrumpfen zu unterbinden; die Breite ergibt sich dann aus
+      dem Text und stimmt von 1280 bis 2200 px mit dem Original ueberein.
 
    Der `__decorator` daneben ist auch im Original absolut positioniert und
-   bleibt deshalb unangetastet. */
+   bleibt unangetastet, ebenso die inneren `...-item-inside`-Elemente, die
+   im Original ebenfalls schrumpfen duerfen. */
 .con-kit-atom-menu-v2-item {
   position: relative !important;
   left: auto !important;
   top: auto !important;
+  flex-shrink: 0 !important;
 }
 
 /* --- 2. Karten im Angebots-Laufband ueberlappten ------------------------

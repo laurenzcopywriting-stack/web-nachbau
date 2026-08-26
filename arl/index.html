@@ -409,4 +409,17 @@ und gebucht.
 
 
 
-<div data-o="2478"></div><script src="../dateien/bedienung.js" defer=""></script></body></html>
+<div data-o="2478"></div><script src="../dateien/bedienung.js" defer=""></script><script src="../dateien/gsap.min.js" defer></script><script src="../dateien/hero.js" defer></script>
+<!-- Nur zur Formularerkennung durch Netlify. Fuer Besucher unsichtbar; die
+     sichtbaren Felder rendert der Baukasten weiter oben ohne <form>-Element.
+     bedienung.js liest jene Felder aus und schickt sie unter diesem Namen. -->
+<form name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="text" name="vorname">
+  <input type="text" name="nachname">
+  <input type="email" name="email">
+  <input type="text" name="vorwahl">
+  <input type="tel" name="telefon">
+  <input type="text" name="seite">
+  <input type="text" name="bot-field">
+</form>
+</body></html>
