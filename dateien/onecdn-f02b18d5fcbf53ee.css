@@ -1,0 +1,84 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 200;
+  
+  src: local(''),
+    url('../dateien/onecdn-492dff696dd72186.woff2') format('woff2'),
+       url('../dateien/onecdn-2ce92909dae477c1.woff') format('woff'),
+       url('../dateien/onecdn-11a0bb976934879e.ttf') format('truetype'),
+       url('../dateien/onecdn-6fce5ef9386d9a4c.svg') format('svg')
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 300;
+  
+  src: local(''),
+    url('../dateien/onecdn-b85e7e89e5913944.woff2') format('woff2'),
+       url('../dateien/onecdn-3279299c1a54be2a.woff') format('woff'),
+       url('../dateien/onecdn-3e017d93211ba7f2.ttf') format('truetype'),
+       url('../dateien/onecdn-61e8a788b450b7f9.svg') format('svg')
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 400;
+  
+  src: local(''),
+    url('../dateien/onecdn-99f3974f1cae63f2.woff2') format('woff2'),
+       url('../dateien/onecdn-5d3dfbf7f8e71a50.woff') format('woff'),
+       url('../dateien/onecdn-43eef039a3037b25.ttf') format('truetype'),
+       url('../dateien/onecdn-bb3b359a0ed9af9f.svg') format('svg')
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 500;
+  
+  src: local(''),
+    url('../dateien/onecdn-1f1f8f6fcfdd62f3.woff2') format('woff2'),
+       url('../dateien/onecdn-379d1936b8093c87.woff') format('woff'),
+       url('../dateien/onecdn-ce9f2e87378f7d45.ttf') format('truetype'),
+       url('../dateien/onecdn-7d124694d6f6c20b.svg') format('svg')
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 600;
+  
+  src: local(''),
+    url('../dateien/onecdn-014d227bdfda5eae.woff2') format('woff2'),
+       url('../dateien/onecdn-49f9681ba41ce13c.woff') format('woff'),
+       url('../dateien/onecdn-94a8312b5078282a.ttf') format('truetype'),
+       url('../dateien/onecdn-71588dbe3f0c739a.svg') format('svg')
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 700;
+  
+  src: local(''),
+    url('../dateien/onecdn-736d66727179864b.woff2') format('woff2'),
+       url('../dateien/onecdn-6a4a36cee3796ad3.woff') format('woff'),
+       url('../dateien/onecdn-7e0ecbd963c4421f.ttf') format('truetype'),
+       url('../dateien/onecdn-e29348d936611e90.svg') format('svg')
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Manrope';
+  font-style: normal;
+  font-weight: 800;
+  
+  src: local(''),
+    url('../dateien/onecdn-a7b9ffb0c4d2d70d.woff2') format('woff2'),
+       url('../dateien/onecdn-3f87d47bbbb33af3.woff') format('woff'),
+       url('../dateien/onecdn-64b80bc82131e5ad.ttf') format('truetype'),
+       url('../dateien/onecdn-351fa031b3ea0b69.svg') format('svg')
+}

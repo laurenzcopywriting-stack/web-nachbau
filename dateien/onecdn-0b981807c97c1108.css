@@ -1,0 +1,96 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  
+  src: local(''),
+    url('../dateien/onecdn-6f542f1b732b0f5b.woff2') format('woff2'),
+       url('../dateien/onecdn-880950ece5b79c05.woff') format('woff'),
+       url('../dateien/onecdn-d3a645b96405540a.ttf') format('truetype'),
+       url('../dateien/onecdn-ac45c1cc3efe2bdb.svg') format('svg')
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 400;
+  
+  src: local(''),
+    url('../dateien/onecdn-0be1f09e8077af59.woff2') format('woff2'),
+       url('../dateien/onecdn-89de4732d323b798.woff') format('woff'),
+       url('../dateien/onecdn-fe84570e4135bdea.ttf') format('truetype'),
+       url('../dateien/onecdn-0a5520814384e111.svg') format('svg')
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 500;
+  
+  src: local(''),
+    url('../dateien/onecdn-b0aa61e593b6bf7b.woff2') format('woff2'),
+       url('../dateien/onecdn-8c93d7e0e84ece37.woff') format('woff'),
+       url('../dateien/onecdn-82e906fcde9925b7.ttf') format('truetype'),
+       url('../dateien/onecdn-090af2208bcf0877.svg') format('svg')
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 500;
+  
+  src: local(''),
+    url('../dateien/onecdn-5c2885818b4e04c2.woff2') format('woff2'),
+       url('../dateien/onecdn-cd7074148054e7e9.woff') format('woff'),
+       url('../dateien/onecdn-298f261b06e0375c.ttf') format('truetype'),
+       url('../dateien/onecdn-66a60276bde40d56.svg') format('svg')
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 600;
+  
+  src: local(''),
+    url('../dateien/onecdn-e9f08800f36b12fc.woff2') format('woff2'),
+       url('../dateien/onecdn-778da58861063421.woff') format('woff'),
+       url('../dateien/onecdn-475d23b446c8bef1.ttf') format('truetype'),
+       url('../dateien/onecdn-f7d84d7b4ff4d7ce.svg') format('svg')
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 600;
+  
+  src: local(''),
+    url('../dateien/onecdn-599873fb389461a1.woff2') format('woff2'),
+       url('../dateien/onecdn-6363f8065ac0dc5e.woff') format('woff'),
+       url('../dateien/onecdn-be884f71cd949049.ttf') format('truetype'),
+       url('../dateien/onecdn-ddd7ac26a8981a59.svg') format('svg')
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 700;
+  
+  src: local(''),
+    url('../dateien/onecdn-7ec9fe08f593984c.woff2') format('woff2'),
+       url('../dateien/onecdn-1b3c3fb0cb72f795.woff') format('woff'),
+       url('../dateien/onecdn-098eaf6b45a1da8e.ttf') format('truetype'),
+       url('../dateien/onecdn-0f6e8d8ac1db13ac.svg') format('svg')
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Lora';
+  font-style: italic;
+  font-weight: 700;
+  
+  src: local(''),
+    url('../dateien/onecdn-823486028258684f.woff2') format('woff2'),
+       url('../dateien/onecdn-92ffcf8a7e6bf71b.woff') format('woff'),
+       url('../dateien/onecdn-1fea2f21292d13ab.ttf') format('truetype'),
+       url('../dateien/onecdn-a20175341c46a15d.svg') format('svg')
+}

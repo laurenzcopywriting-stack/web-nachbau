@@ -1,0 +1,96 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Instrument Sans';
+  font-style: normal;
+  font-weight: 400;
+  
+  src: local(''),
+    url('../dateien/onecdn-d8564838f04d3dd0.woff2') format('woff2'),
+       url('../dateien/onecdn-509f712c75313ce7.woff') format('woff'),
+       url('../dateien/onecdn-2362960a1a13c40a.ttf') format('truetype'),
+       url('../dateien/onecdn-6255a95a3c45cded.svg') format('svg')
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Instrument Sans';
+  font-style: italic;
+  font-weight: 400;
+  
+  src: local(''),
+    url('../dateien/onecdn-a85ba7abc9d8d54b.woff2') format('woff2'),
+       url('../dateien/onecdn-9808f3b6d4e407e9.woff') format('woff'),
+       url('../dateien/onecdn-fd035008e502e18a.ttf') format('truetype'),
+       url('../dateien/onecdn-c7195a2f9225da05.svg') format('svg')
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Instrument Sans';
+  font-style: normal;
+  font-weight: 500;
+  
+  src: local(''),
+    url('../dateien/onecdn-e94980dfbcfb7739.woff2') format('woff2'),
+       url('../dateien/onecdn-eae81e3161b401d7.woff') format('woff'),
+       url('../dateien/onecdn-865bf9a11ee2b281.ttf') format('truetype'),
+       url('../dateien/onecdn-18039e90dd3ff7d0.svg') format('svg')
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Instrument Sans';
+  font-style: italic;
+  font-weight: 500;
+  
+  src: local(''),
+    url('../dateien/onecdn-9d843bfa4fd614bf.woff2') format('woff2'),
+       url('../dateien/onecdn-6f81b59dbb19d607.woff') format('woff'),
+       url('../dateien/onecdn-d31f652cf0dc8fef.ttf') format('truetype'),
+       url('../dateien/onecdn-99e3cf1a4157151e.svg') format('svg')
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Instrument Sans';
+  font-style: normal;
+  font-weight: 600;
+  
+  src: local(''),
+    url('../dateien/onecdn-e4a8d770b4809360.woff2') format('woff2'),
+       url('../dateien/onecdn-210d631019855e38.woff') format('woff'),
+       url('../dateien/onecdn-fda8ac6b54fa6ea8.ttf') format('truetype'),
+       url('../dateien/onecdn-5920a56df1862d26.svg') format('svg')
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Instrument Sans';
+  font-style: italic;
+  font-weight: 600;
+  
+  src: local(''),
+    url('../dateien/onecdn-535a0e5901aeb3f8.woff2') format('woff2'),
+       url('../dateien/onecdn-2646ecffb02b8fac.woff') format('woff'),
+       url('../dateien/onecdn-fa29a4a4a1920e14.ttf') format('truetype'),
+       url('../dateien/onecdn-c11b7be2a903a5d1.svg') format('svg')
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Instrument Sans';
+  font-style: normal;
+  font-weight: 700;
+  
+  src: local(''),
+    url('../dateien/onecdn-f23bc9e3fd4b1954.woff2') format('woff2'),
+       url('../dateien/onecdn-240c884cc73eb535.woff') format('woff'),
+       url('../dateien/onecdn-d0a7fdf871ca06c7.ttf') format('truetype'),
+       url('../dateien/onecdn-b1ce29e33dade4a5.svg') format('svg')
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Instrument Sans';
+  font-style: italic;
+  font-weight: 700;
+  
+  src: local(''),
+    url('../dateien/onecdn-048221d3d9a71f00.woff2') format('woff2'),
+       url('../dateien/onecdn-d877dabbdfd2fef4.woff') format('woff'),
+       url('../dateien/onecdn-fc5ca24d273138e1.ttf') format('truetype'),
+       url('../dateien/onecdn-a8fac5117677ceb5.svg') format('svg')
+}

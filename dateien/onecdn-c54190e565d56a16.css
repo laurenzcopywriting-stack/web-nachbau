@@ -1,0 +1,60 @@
+@font-face {
+  font-display: swap;
+  font-family: 'Comfortaa';
+  font-style: normal;
+  font-weight: 300;
+  
+  src: local(''),
+    url('../dateien/onecdn-ebefc52fc61bb597.woff2') format('woff2'),
+       url('../dateien/onecdn-3d87c462c4a886da.woff') format('woff'),
+       url('../dateien/onecdn-0690a59b4c8d6699.ttf') format('truetype'),
+       url('../dateien/onecdn-09270110726bafe3.svg') format('svg')
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Comfortaa';
+  font-style: normal;
+  font-weight: 400;
+  
+  src: local(''),
+    url('../dateien/onecdn-64b64b20c746b304.woff2') format('woff2'),
+       url('../dateien/onecdn-6a259a86d7504460.woff') format('woff'),
+       url('../dateien/onecdn-4944e7446fbefc7d.ttf') format('truetype'),
+       url('../dateien/onecdn-376f020fd8e29b4b.svg') format('svg')
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Comfortaa';
+  font-style: normal;
+  font-weight: 500;
+  
+  src: local(''),
+    url('../dateien/onecdn-ae2a1c69679d11c3.woff2') format('woff2'),
+       url('../dateien/onecdn-bab4dba678c376eb.woff') format('woff'),
+       url('../dateien/onecdn-f461ec6ae4e87abc.ttf') format('truetype'),
+       url('../dateien/onecdn-6dac1010e1420c52.svg') format('svg')
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Comfortaa';
+  font-style: normal;
+  font-weight: 600;
+  
+  src: local(''),
+    url('../dateien/onecdn-538996fa4fcda1b3.woff2') format('woff2'),
+       url('../dateien/onecdn-8f5b25b8e190eab9.woff') format('woff'),
+       url('../dateien/onecdn-bd6892b7fc1bd93d.ttf') format('truetype'),
+       url('../dateien/onecdn-01fd30e0db17bd89.svg') format('svg')
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Comfortaa';
+  font-style: normal;
+  font-weight: 700;
+  
+  src: local(''),
+    url('../dateien/onecdn-e07c157f9ac01aff.woff2') format('woff2'),
+       url('../dateien/onecdn-c71703f39f5251c2.woff') format('woff'),
+       url('../dateien/onecdn-46258110e004b2ca.ttf') format('truetype'),
+       url('../dateien/onecdn-d89e67b3380cd0c5.svg') format('svg')
+}
